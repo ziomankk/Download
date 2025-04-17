@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloader FB & IG</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #2fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Download Video FB & IG</h2>
+    <input type="text" id="videoURL" placeholder="Tempel link video...">
+    <button onclick="downloadVideo()">Download</button>
+    <div class="info">
+      Video akan dibuka di situs downloader. Tunggu beberapa detik lalu klik tombol download di sana.
+    </div>
+  </div>
+
+  <script>
+    function downloadVideo() {
+      const url = document.getElementById('videoURL').value.trim();
+      if (!url) {
+        alert('Masukkan link terlebih dahulu.');
+        return;
+      }
+
+      if (url.includes('facebook.com')) {
+        window.open('https://snapsave.app/facebook?url=' + encodeURIComponent(url), '_blank');
+      } else if (url.includes('instagram.com')) {
+        window.open('https://igram.io?url=' + encodeURIComponent(url), '_blank');
+      } else {
+        alert('Link tidak valid. Harap masukkan link Facebook atau Instagram.');
+      }
+    }
+  </script>
+
+</body>
+</html>
